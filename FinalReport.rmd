@@ -33,6 +33,12 @@ If not, then whose view differs from whom??
 $H_0$ there is no significant differences in the data.
 
 $H_A$ There are differences in the data 
+
+```{r eval=FALSE}
+mydata <- mydata %>%
+mutate(across(where(is.character), as.factor))
+```
+
 # Methods
 
 <!--Decide on your methods:  use "variable analysis" or other appropriate descriptors.  Make sure to choose at least one graphical method and at least one numerical method. Discuss what data manipulations may be needed for example subsetting or other binning procedures and what sort of graphical displays and inferential tools will be used!-->
@@ -51,6 +57,10 @@ For interference results we are going to run a Chi-Squared test which will tell 
 ## Descriptive Results
 
 ### Graphical Descriptive Results
+```{r}
+barchartGC(~race + cappun,data = mydata)
+barchartGC(~race + cappun,data=mydata, type="percent")
+```
 
 <!--Graphical results here.  Make sure to show your code.  Provide appropriate labels for axes, giving units if possible, and provide a good title for the graph, too.  Use the graphical results to describe the patterns if any that exist in the data as focused toward the research question. Bottom line is to explain the features of the graph that are relevant to conforming or departing to what is expected by your null hypothesis !-->
 
@@ -65,6 +75,11 @@ For interference results we are going to run a Chi-Squared test which will tell 
 <!--Numerical results go here. Use the numerical results to describe the patterns if any that exist in the data as focused toward the research question!-->
 
 
+```{r}
+table1 <- xtabs(~race + cappun, data=mydata)
+rowPerc(table1)
+colPerc(table1)
+```
 
 
 ## Now with More data
@@ -75,8 +90,15 @@ For interference results we are going to run a Chi-Squared test which will tell 
 
 <!--State hypothesis clearly.  Make sure your discussion of the inferential test covers all the aspects that the test output produces, such as test statistic, p-value etc.  Make a decision about the null hypothesis, explain the assumptions on which the selected test/procedure was based, and why the chosen procedure satisfys the assumptions and is appropriate to answer the research question!-->
 
-`
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+```
 
+
+```{r}
+fisherXY(mydata$race,mydata$cappun)
+```
 
 ## More data version
 
