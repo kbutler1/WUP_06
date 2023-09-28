@@ -41,6 +41,12 @@ $H_A$ There are differences in the data
 
 <!--Divide this section into two sub-sections:  One for your descriptive  results and one for your inferential results.!-->
 
+
+We are going to use CandP helper files to change two categorical data coupon and race. Because this is a cat- car problem will first create a bar chart then we will run fav results to show graphical and numerical results
+
+$\Huge\Chi^2=\sumfrac{(0-E)}^2-{0}$
+
+For interference results we are going to run a Chi-Squared test which will tell us if there any differences in the data but not where. Normally we will use a fisher test to do this but in this case we have more than one two factors in "race" so will use the XY
 ## Descriptive Results
 
 ### Graphical Descriptive Results
