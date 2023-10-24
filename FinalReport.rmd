@@ -140,5 +140,6 @@ the p-value for the chi-square test was  0.000000000000001027 this is too small 
 
 
 # Discussion and Conclusion
+The question was if there is a difference of attitude toward capitol punishment (cappun) independent of race (race)? The answer is yes, according to the data white races think very different opinions from black and other races. The p-value was 0.000000000000001027 which is too small of a number which is why we rejected the null hypothesis. 
 
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
