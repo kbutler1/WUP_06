@@ -67,6 +67,22 @@ barchartGC(~race + cappun,data=mydata, type="percent")
 
 
 ## Now with The Most data (fewer variables gives more data points)
+```{r}
+dd2 <- mydata %>% group_by(race,cappun) %>% summarize(count=n()) %>% mutate(prcnt=count/sum(count))
+
+
+# the group_by followed by summarize(count=n())
+
+basicC <- ggplot(dd2,aes(x=race,y=count,fill=cappun))
+basicC + geom_bar(stat="identity",position="dodge")
+
+#Now for percentage plot
+
+basicCC <- ggplot(dd2,aes(x=race,y=prcnt*100,fill=cappun)) 
+basicCC + geom_bar(stat="identity", position = "dodge")
+```
+
+From this plot it appears the white race is more strongly in favor of capital punishment then the black and other races.
 
 
 
